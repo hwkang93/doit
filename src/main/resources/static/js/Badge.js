@@ -22,7 +22,7 @@ export default class Badge {
         key : 'bg-danger',
         value : '실패'
     };
-    //TODO
+
     static ING = {
         key : 'bg-ing',
         value : '진행중'
@@ -38,7 +38,21 @@ export default class Badge {
     }
 
     //일간, 주간, 월간
+    static DATE = {
+        key : 'big-light',
+        value : '일간'
+    }
 
+    //TODO
+    static WEEK = {
+        key : 'big-grey',
+        value : '주간'
+    }
+
+    static MONTH = {
+        key : 'big-dark',
+        value : '월간'
+    }
 
 
 

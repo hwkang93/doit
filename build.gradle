@@ -20,9 +20,26 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//postgresql
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
+	runtimeOnly 'org.postgresql:postgresql'
+
+	//java 9 이상의 버전에서 @Entity 어노테이션 사용시 발생하는 오류 해결
+	//Error message : java.lang.NoClassDefFoundError: javax/annotation/Generated (Compile Error)
+	implementation("javax.annotation:javax.annotation-api:1.3.2")
+	annotationProcessor("javax.annotation:javax.annotation-api:1.3.2")
+
+	//thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time', version: '3.0.0.RELEASE'
+
 }
 
 tasks.named('test') {

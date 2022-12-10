@@ -20,3 +20,12 @@
 .right-box {
     float: right;
 }
+
+.bg-gray {
+    --bs-bg-opacity: 1;
+    background-color: grey;
+}
+
+.bg-ing {
+    background-color: rgb(255, 192, 0);;
+}
