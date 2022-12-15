@@ -63,7 +63,7 @@ export default class Badge {
     }
 
 
-    getHtml() {
+    toHtml() {
         return `<span class="badge ${this.#badge.key}">${this.#badge.value}</span>`;
     }
 }

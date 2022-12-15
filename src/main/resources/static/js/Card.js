@@ -1,17 +1,12 @@
 import Badge from "./Badge.js";
 
 export default class Card {
-    #badge;
+    #badgeList;
     #title;
     #count;
 
     constructor(title) {
         this.#title = title;
-    }
-
-    test() {
-        const a = new Badge(Badge.FAIL);
-        console.log(a.getHtml());
     }
 
     toHtml() {
