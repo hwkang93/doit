@@ -5,9 +5,11 @@ import hr.hw.doit.doit.data.doitType.DateType;
 import hr.hw.doit.doit.data.doitType.DoitType;
 import hr.hw.doit.doit.data.doitType.ProcessType;
 import lombok.Builder;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@Getter
 public class DoitEntity {
 
     private long id;
@@ -40,5 +42,21 @@ public class DoitEntity {
         this.settleYn = settleYn;
         this.registryTime = registryTime;
         this.updateTime = updateTime;
+    }
+
+    public DoitResponseDto toResponseDto() {
+        return DoitResponseDto.builder()
+                .id(this.id)
+                .title(this.title)
+                .executorId(this.executorId)
+                .doitType(this.doitType)
+                .dateType(this.dateType)
+                .processType(this.processType)
+                .count(this.count)
+                .price(this.price)
+                .settleYn(this.settleYn)
+                .registryTime(this.registryTime)
+                .updateTime(this.updateTime)
+                .build();
     }
 }

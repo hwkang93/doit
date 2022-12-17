@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface DoitService {
 
-    List<DoitResponseDto> findByUserId();
+    List<DoitResponseDto> findByUserExecutorId(String executorId);
 
 }
