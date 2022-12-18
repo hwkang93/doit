@@ -58,8 +58,9 @@ export default class Badge {
 
     #badge;
 
-    constructor(badge) {
-        this.#badge = badge;
+    constructor(key) {
+        this.#badge = Badge[key];
+        debugger;
     }
 
 

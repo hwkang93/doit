@@ -1,12 +1,30 @@
 import Badge from "./Badge.js";
 
 export default class Card {
-    #badgeList;
+    #id;
     #title;
-    #count;
+    #executorId;
 
-    constructor(title) {
-        this.#title = title;
+    #count;
+    #price;
+
+    #settleYn;
+    #badgeList;
+
+    constructor(cardJsonObject) {
+        this.#id = cardJsonObject.id;
+        this.#title = cardJsonObject.title;
+        this.#executorId = cardJsonObject.executorId;
+        this.#count = cardJsonObject.count;
+        this.#price = cardJsonObject.price;
+        this.#settleYn = cardJsonObject.settleYn;
+
+        const badge = new Badge(cardJsonObject.doitType);
+        this.#badgeList = [
+            new Badge(cardJsonObject.doitType),
+            new Badge(cardJsonObject.dateType),
+            new Badge(cardJsonObject.processType)
+        ];
     }
 
     toHtml() {
