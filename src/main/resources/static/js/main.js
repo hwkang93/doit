@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadData() {
+    const targetDiv = document.querySelector('#card-group');
     const url = `doits/${userId}`;
     const options = {
         method : 'GET',
@@ -25,7 +26,10 @@ function loadData() {
         })
         .then(response => {
             for (const cardJsonObject of response) {
-                cardList.push(new Card(cardJsonObject));
+                const card = new Card(cardJsonObject);
+
+                targetDiv.append(card.toHtml());
+                cardList.push(card);
             }
         });
 }
