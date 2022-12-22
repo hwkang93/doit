@@ -33,24 +33,23 @@ export default class Badge {
         value : '하기'
     }
     static DONT = {
-        key : 'big-warning',
+        key : 'bg-warning',
         value : '말기'
     }
 
     //일간, 주간, 월간
     static DATE = {
-        key : 'big-light',
+        key : 'bg-light',
         value : '일간'
     }
 
-    //TODO
     static WEEK = {
-        key : 'big-grey',
+        key : 'bg-gray',
         value : '주간'
     }
 
     static MONTH = {
-        key : 'big-dark',
+        key : 'bg-dark',
         value : '월간'
     }
 
@@ -60,11 +59,16 @@ export default class Badge {
 
     constructor(key) {
         this.#badge = Badge[key];
-        debugger;
     }
 
 
     toHtml() {
-        return `<span class="badge ${this.#badge.key}">${this.#badge.value}</span>`;
+        const span = document.createElement('span');
+        span.className = 'badge';
+
+        span.classList.add(this.#badge.key);
+        span.innerText = this.#badge.value;
+
+        return span;
     }
 }
