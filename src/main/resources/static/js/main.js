@@ -28,6 +28,8 @@ function loadData() {
             for (const cardJsonObject of response) {
                 const card = new Card(cardJsonObject);
 
+                console.log(card.toHtml())
+
                 targetDiv.append(card.toHtml());
                 cardList.push(card);
             }
